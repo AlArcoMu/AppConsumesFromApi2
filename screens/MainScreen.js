@@ -1,22 +1,31 @@
 import React from 'react';
-import { View, Text, Image, SafeAreaView } from 'react-native';
+import { View, Text, Image, SafeAreaView,StyleSheet } from 'react-native';
 import Swiper from 'react-native-swiper';
 import FakeButton from '../components/FakeButton';
+import { useNavigation } from '@react-navigation/native';
 
 const MainScreen = ({ navigation }) => {
   return (
     <SafeAreaView style={styles.container}>
-      {/* Logo */}
       <Image source={require('../assets/logo.png')} style={styles.logo} />
-      {/* Carrusel de imágenes */}
-      <Swiper style={styles.wrapper} showsButtons={true}>
+      <Swiper style={styles.wrapper} showsButtons={true} horizontal={true}>
         <View style={styles.slide}>
-          <Image source={require('../assets/logo.png')} style={styles.image} />
+          <Image source={require('../assets/HaloI.jpeg')} style={styles.image} />
+        </View>
+        <View style={styles.slide}>
+          <Image source={require('../assets/Hearthstone.jpeg')} style={styles.image} />
+        </View>
+        <View style={styles.slide}>
+          <Image source={require('../assets/LOL.jpeg')} style={styles.image} />
+        </View>
+        <View style={styles.slide}>
+          <Image source={require('../assets/Warzone.jpeg')} style={styles.image} />
+        </View>
+        <View style={styles.slide}>
+          <Image source={require('../assets/OW2.jpeg')} style={styles.image} />
         </View>
       </Swiper>
-
-      {/* Botón FakeButton */}
-      <FakeButton onPress={() => navigation.navigate('OtraPantalla')} title="Ir a otra pantalla" />
+      <FakeButton onPress={() => navigation.navigate('Home')} title="Ir a otra pantalla" />
     </SafeAreaView>
   );
 };
@@ -44,6 +53,7 @@ const styles = StyleSheet.create({
     image: {
       width: '100%',
       height: '100%',
+      resizeMode: 'cover', // Ajusta el modo de redimensionamiento según sea necesario
     }
   });
 export default MainScreen;

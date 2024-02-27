@@ -6,7 +6,7 @@ const FakeButton = ({ onPress, title}) => {
   return (
     <Pressable onPress={onPress}>
       {/* Contenedor del botón con estilo y posible cambio si está deshabilitado */}
-      <View style={[styles.buttonContainer, disabled && styles.disabledButton]}>
+      <View style={[styles.buttonContainer]}>
         {/* Texto del botón */}
         <Text style={styles.buttonText}>{title}</Text>
       </View>

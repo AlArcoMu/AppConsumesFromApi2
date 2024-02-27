@@ -5,24 +5,25 @@ import FakeButton from '../components/FakeButton';
 import { useNavigation } from '@react-navigation/native';
 
 const MainScreen = ({ navigation }) => {
+  
   return (
     <SafeAreaView style={styles.container}>
       <Image source={require('../assets/logo.png')} style={styles.logo} />
       <Swiper style={styles.wrapper} showsButtons={true} horizontal={true}>
         <View style={styles.slide}>
-          <Image source={require('../assets/HaloI.jpeg')} style={styles.image} />
+          <Image source={require('../assets/Halo_Combat_Evolved.png')}style={styles.image}/>
         </View>
         <View style={styles.slide}>
-          <Image source={require('../assets/Hearthstone.jpeg')} style={styles.image} />
+          <Image source={require('../assets/fifa.png')}style={styles.image}/>
         </View>
         <View style={styles.slide}>
-          <Image source={require('../assets/LOL.jpeg')} style={styles.image} />
+          <Image source={require('../assets/gow.png')}style={styles.image}/>
         </View>
         <View style={styles.slide}>
-          <Image source={require('../assets/Warzone.jpeg')} style={styles.image} />
+          <Image source={require('../assets/lol.png')}style={styles.image}/>
         </View>
         <View style={styles.slide}>
-          <Image source={require('../assets/OW2.jpeg')} style={styles.image} />
+          <Image source={require('../assets/wii.png')}style={styles.image}/>
         </View>
       </Swiper>
       <FakeButton onPress={() => navigation.navigate('Home')} title="Ir a otra pantalla" />
@@ -34,15 +35,16 @@ const styles = StyleSheet.create({
       flex: 1,
       alignItems: 'center',
       justifyContent: 'center',
-      backgroundColor: '#129494',
+      backgroundColor: '#BEEBFA',
+      padding:20
     },
     logo: {
-      width: 200,
-      height: 200,
+      width: 300,
+      height: 300,
       marginBottom: 20,
     },
     wrapper: {
-      height: 200,
+      height: 400,
       marginBottom: 20,
     },
     slide: {
@@ -51,9 +53,9 @@ const styles = StyleSheet.create({
       alignItems: 'center',
     },
     image: {
-      width: '100%',
-      height: '100%',
-      resizeMode: 'cover', // Ajusta el modo de redimensionamiento según sea necesario
+      width: '80%',
+      height: '50%',
+      resizeMode: 'stretch',
     }
   });
 export default MainScreen;

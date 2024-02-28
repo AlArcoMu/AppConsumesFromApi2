@@ -6,7 +6,7 @@ import { useNavigation } from '@react-navigation/native';
 
 const MainScreen = ({ navigation }) => {
   
-  return (
+  return ( //pantalla principal con el logo, el slider con juegos de ejemplo y botón para acceder a la segunda pantalla
     <SafeAreaView style={styles.container}>
       <Image source={require('../assets/logo.png')} style={styles.logo} />
       <Swiper style={styles.wrapper} showsButtons={true} horizontal={true}>
@@ -14,7 +14,7 @@ const MainScreen = ({ navigation }) => {
           <Image source={require('../assets/Halo_Combat_Evolved.png')}style={styles.image}/>
         </View>
         <View style={styles.slide}>
-          <Image source={require('../assets/fifa.png')}style={styles.image}/>
+          <Image source={require('../assets/ovw2.png')}style={styles.image}/>
         </View>
         <View style={styles.slide}>
           <Image source={require('../assets/gow.png')}style={styles.image}/>
@@ -26,7 +26,7 @@ const MainScreen = ({ navigation }) => {
           <Image source={require('../assets/wii.png')}style={styles.image}/>
         </View>
       </Swiper>
-      <FakeButton onPress={() => navigation.navigate('Home')} title="Ir a otra pantalla" />
+      <FakeButton onPress={() => navigation.navigate('tabs')} title="Ir a otra pantalla" />
     </SafeAreaView>
   );
 };
@@ -56,6 +56,7 @@ const styles = StyleSheet.create({
       width: '80%',
       height: '50%',
       resizeMode: 'stretch',
+      borderRadius: 15,
     }
   });
 export default MainScreen;

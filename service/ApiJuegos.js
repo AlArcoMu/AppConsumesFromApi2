@@ -5,7 +5,7 @@ export async function getAllJuegos() {
   let data = await fetch(URL_Juegos + "?platform=all");
   let juegos = await data.json();
   console.log(juegos);
-  return juegos.results;
+  return juegos;
 }
 //Funcion que devuelve los juegos por fecha de salida
 export async function getJuegosByRelease() {

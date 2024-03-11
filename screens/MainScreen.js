@@ -9,7 +9,7 @@ const MainScreen = ({ navigation }) => {
   return ( //pantalla principal con el logo, el slider con juegos de ejemplo y botón para acceder a la segunda pantalla
     <SafeAreaView style={styles.container}>
       <Image source={require('../assets/logo.png')} style={styles.logo} />
-      <Swiper style={styles.wrapper} showsButtons={true} horizontal={true}>
+      <Swiper style={styles.wrapper} showsButtons={true} horizontal={true}> 
         <View style={styles.slide}>
           <Image source={require('../assets/Halo_Combat_Evolved.png')}style={styles.image}/>
         </View>

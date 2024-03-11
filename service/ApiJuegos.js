@@ -1,20 +1,17 @@
+// URL de la API para obtener todos los juegos
 const URL_Juegos = "https://www.freetogame.com/api/games";
-const URL_JuegosEspecifico = "https://www.freetogame.com/api/game";
-//función que devuelve todos los Juegos de todas las plataformas de la API
+
+// Función que devuelve todos los juegos de todas las plataformas de la API
 export async function getAllJuegos() {
-  let data = await fetch(URL_Juegos + "?platform=all");
-  let juegos = await data.json();
-  return juegos;
+  let data = await fetch(URL_Juegos + "?platform=all"); // Realiza una petición a la API para obtener todos los juegos
+  let juegos = await data.json(); // Convierte la respuesta de la API a formato JSON
+  return juegos; // Devuelve los juegos
 }
-//Funcion que devuelve los juegos por fecha de salida
+
+// Función que devuelve los juegos ordenados por fecha de salida
 export async function getJuegosByRelease() {
-  let data = await fetch(URL_Juegos + "?sort-by=release-date");
-  let juegos = await data.json();
-  return juegos;
+  let data = await fetch(URL_Juegos + "?sort-by=release-date"); // Realiza una petición a la API para obtener los juegos ordenados por fecha de salida
+  let juegos = await data.json(); // Convierte la respuesta de la API a formato JSON
+  return juegos; // Devuelve los juegos
 }
-//Sacar un juego especifico la url es distinta por eso la otra const
-export async function getSpecificGame(id) {
-  let data = await fetch(URL_JuegosEspecifico + "?id=" + id);
-  let juegos = await data.json();
-  return juegos;
-}
+
